@@ -1,7 +1,7 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = Bsp
 OBJS_DIR = objs
 
-FILES = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+FILES = main.cpp  Fixed.cpp bsp.cpp Point.cpp
 SRCS = $(FILES)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 
