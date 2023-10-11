@@ -10,6 +10,9 @@ ScavTrap::ScavTrap(): ClapTrap(){
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 	std::cout << "ScavTrap Assignement constructor called, ScavTrap [" << _name << "] has been created."<< std::endl;
+	this->_AttackDamage = 20;
+	this->_EnergyPoints = 50;
+	this->_HitPoints = 100;
 	return ;
 }
 

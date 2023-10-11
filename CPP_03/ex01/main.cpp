@@ -2,7 +2,6 @@
 
 int main(){
 	ScavTrap bob("Bob");
-	
 	bob.guardGate();
 	bob.attack("a pineaple");
 	bob.takeDamage(100);

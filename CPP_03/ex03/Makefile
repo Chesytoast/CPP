@@ -1,11 +1,11 @@
-NAME = FragTrap
+NAME = DiamondTrap
 OBJS_DIR = objs
 
-FILES = main.cpp  ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+FILES = main.cpp  ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 SRCS = $(FILES)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 
-CFLAGS = -Wall -Wextra -Werror -Wshadow -g
+CFLAGS = -Wall -Wextra -Werror -g
 CPPFLAGS = -std=c++98 
 
 all: $(OBJS_DIR) $(NAME)
