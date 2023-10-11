@@ -13,7 +13,7 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), _name
 	return ;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const& diam): ClapTrap(diam), FragTrap(diam), ScavTrap(diam){
+DiamondTrap::DiamondTrap(DiamondTrap const& diam): ClapTrap(), FragTrap(), ScavTrap(){
 	*this = diam;
 	std::cout << "Copy constructor called, DiamondTrap [" << _name << "] has been created."<< std::endl;
 	return ;
