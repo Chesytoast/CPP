@@ -1,7 +1,7 @@
-NAME = animal
+NAME = Materia
 OBJS_DIR = objs
 
-FILES = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharcter.cpp Character.cc \
+FILES = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp Character.cpp \
 		IMateriaSource.cpp MateriaSource.cpp
 SRCS = $(FILES)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))

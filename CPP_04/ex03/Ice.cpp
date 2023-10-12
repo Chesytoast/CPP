@@ -5,6 +5,7 @@ Ice::Ice(): _type("ice"){
 }
 
 Ice::Ice(const Ice& other): AMateria(), _type("ice"){
+    *this = other;
     return ;
 }
 
@@ -12,6 +13,7 @@ Ice& Ice::operator=(const Ice& other) {
     if (this == &other) {
         return *this; 
     }
+    return *this;
 }
 
 Ice::~Ice(){

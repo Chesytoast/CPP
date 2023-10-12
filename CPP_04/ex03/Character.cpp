@@ -1,22 +1,22 @@
 #include "Character.hpp"
 
 Character::Character(): _name("Default"){
-    _inventory[0] = nullptr;
-    _inventory[1] = nullptr;
-    _inventory[2] = nullptr;
-    _inventory[3] = nullptr;
+    _inventory[0] = NULL;
+    _inventory[1] = NULL;
+    _inventory[2] = NULL;
+    _inventory[3] = NULL;
     return ;
 }
 
 Character::Character(std::string name): _name(name){
-    _inventory[0] = nullptr;
-    _inventory[1] = nullptr;
-    _inventory[2] = nullptr;
-    _inventory[3] = nullptr;
+    _inventory[0] = NULL;
+    _inventory[1] = NULL;
+    _inventory[2] = NULL;
+    _inventory[3] = NULL;
     return ;
 }
 
-Character::Character(const Character& other) {
+Character::Character(const Character& other): ICharacter() {
     *this = other;
     return ;
 }
@@ -31,6 +31,7 @@ Character& Character::operator=(const Character& other) {
             delete this->_inventory[i];
         this->_inventory[i] = other._inventory[i]->clone();
     }
+    return *this;
 }
 
 Character::~Character(){
@@ -55,7 +56,7 @@ void    Character::equip(AMateria* m){
 //memory leaks check beforehand
 void    Character::unequip(int idx){
     if (idx >= 0 && idx < 4)
-        this->_inventory[idx] = nullptr;
+        this->_inventory[idx] = NULL;
 }
 
 void    Character::use(int idx, ICharacter& target){
