@@ -1,19 +1,19 @@
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(){
-    std::cout << "Dog default constructor called" << std::endl;
+Cat::Cat(){
+    std::cout << "Cat default constructor called" << std::endl;
     this->_brain = new Brain();
-    this->_type = "Dog";
+    this->_type = "Cat";
     return ;
 }
 
-Dog::Dog(const Dog& other): Animal(), _brain(NULL){
-    std::cout << "Dog copy constructor called" << std::endl;
+Cat::Cat(const Cat& other): Animal(), _brain(NULL){
+    std::cout << "Cat copy constructor called" << std::endl;
     *this = other;
     return ;
 }
 
-Dog& Dog::operator=(const Dog& other) {
+Cat& Cat::operator=(const Cat& other) {
     if (this == &other) {
         return *this; 
     }
@@ -24,17 +24,17 @@ Dog& Dog::operator=(const Dog& other) {
     return *this;
 }
 
-Dog::~Dog(){
-    std::cout << "Dog destructor called" << std::endl;
+Cat::~Cat(){
+    std::cout << "Cat destructor called" << std::endl;
     delete _brain;
     return ;
 }
 
-void    Dog::makeSound(){
-    std::cout << "Bark" << std::endl;
+void    Cat::makeSound(){
+    std::cout << "Meow" << std::endl;
 }
 
-void    Dog::modifIdeas(int start, int end, std::string idea){
+void    Cat::modifIdeas(int start, int end, std::string idea){
     if (start < 0 || start > 99 || end < 0 || end > 99){
         std::cout << "Try to put ideas inside his brain (0-99)" << std::endl;
         return ;
@@ -45,7 +45,7 @@ void    Dog::modifIdeas(int start, int end, std::string idea){
     }
 }
 
-void    Dog::tellIdeas(int nb)const{
+void    Cat::tellIdeas(int nb)const{
     if (nb > 99){
         std::cout << "a " + _type + " has not that much ideas in his brain..." << std::endl;
         return ;
