@@ -2,6 +2,7 @@
 #define BRAIN_HPP
 
 #include <string>
+#include <iostream>
 
 class Brain {
     private:
@@ -12,7 +13,8 @@ class Brain {
         Brain(Brain const& other); 
         Brain& operator=(Brain const& other);
         ~Brain();
-
+        void    setIdea(std::string idea, int i);
+        std::string getIdea(int i)const;
 };
 
 #endif
