@@ -8,8 +8,7 @@ AMateria::AMateria(std::string const& type): _type(type){
     return;
 }
 
-AMateria::AMateria(const AMateria& other) {
-    *this = other;
+AMateria::AMateria(const AMateria& other): _type(other._type) {
     return ;
 }
 
@@ -24,6 +23,16 @@ AMateria::~AMateria(){
     return ;
 }
 
+AMateria* AMateria::clone()const{
+    return new AMateria(*this);
+}
+
 std::string const& AMateria::getType() const{
     return this->_type;
+}
+
+void AMateria::use(ICharacter& target){
+    (void)target;
+    std::cout << "Je ne devrais pas etre appeler" << std::endl;
+    return ;
 }

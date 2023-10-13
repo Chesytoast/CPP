@@ -5,16 +5,14 @@
 
 class Cure: public AMateria {
     private:
-         std::string _type;
          
     public:
         Cure();
         Cure(Cure const& other); 
         Cure& operator=(Cure const& other);
         virtual ~Cure();
-        AMateria* clone() const;
         void use(ICharacter& target);
-
+        AMateria* clone() const;
 };
 
 #endif

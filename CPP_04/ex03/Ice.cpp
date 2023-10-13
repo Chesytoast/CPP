@@ -1,10 +1,10 @@
 #include "Ice.hpp"
 
-Ice::Ice(): _type("ice"){
+Ice::Ice(): AMateria("ice"){
     return ;
 }
 
-Ice::Ice(const Ice& other): AMateria(), _type("ice"){
+Ice::Ice(const Ice& other): AMateria("ice"){
     *this = other;
     return ;
 }
@@ -20,8 +20,8 @@ Ice::~Ice(){
     return ;
 }
 
-AMateria* Ice::clone()const{
-    return new Ice(*this);
+AMateria*   Ice::clone()const{
+    return new Ice();
 }
 
 void    Ice::use(ICharacter& target){

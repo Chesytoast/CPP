@@ -3,6 +3,8 @@
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 class Character: public ICharacter {
     private:

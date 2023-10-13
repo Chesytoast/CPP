@@ -11,9 +11,9 @@ class MateriaSource: public IMateriaSource {
         MateriaSource();
         MateriaSource(MateriaSource const& other); 
         MateriaSource& operator=(MateriaSource const& other);
-        ~MateriaSource();
-        virtual void learnMateria(AMateria*);
-        virtual AMateria* createMateria(std::string const & type);
+        virtual ~MateriaSource();
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
 };
 
 #endif

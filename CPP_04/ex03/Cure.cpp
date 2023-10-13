@@ -1,10 +1,10 @@
 #include "Cure.hpp"
 
-Cure::Cure(): _type("cure"){
+Cure::Cure(): AMateria("cure"){
     return ;
 }
 
-Cure::Cure(const Cure& other): AMateria(), _type("cure"){
+Cure::Cure(const Cure& other):  AMateria("cure"){
     *this = other;
     return ;
 }
@@ -20,8 +20,8 @@ Cure::~Cure(){
     return ;
 }
 
-AMateria* Cure::clone()const{
-    return new Cure(*this);
+AMateria*   Cure::clone()const{
+    return new Cure();
 }
 
 void    Cure::use(ICharacter& target){

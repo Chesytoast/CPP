@@ -20,23 +20,38 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
     for (int i = 0; i < 4; ++i){
         if (this->_inventory[i])
             delete this->_inventory[i];
-        this->_inventory[i] = other._inventory[i]->clone();
+        this->_inventory[i] = NULL;
+        if (other._inventory[i])
+            this->_inventory[i] = other._inventory[i]->clone();
     }
      return *this;
 }
 
 MateriaSource::~MateriaSource(){
     for (int i = 0; i < 4; ++i){
-        if (this->_inventory[i])
+        if (this->_inventory[i]){
             delete this->_inventory[i];
+            this->_inventory[i] = NULL;
+        }
     }
-    return ;
 }
 
 void    MateriaSource::learnMateria(AMateria* m){
      for (int i = 0; i < 4; ++i){
-        if (!this->_inventory[i])
-            this->_inventory[i] = m->clone();
+        if (!this->_inventory[i]){
+            this->_inventory[i] = m;
+            break ;
+        }
     }
 }
 
+AMateria* MateriaSource::createMateria(std::string const & type){
+    for (int i = 0; i < 4; ++i){
+        if (this->_inventory[i]){
+            if (this->_inventory[i]->getType() == type ){
+                return this->_inventory[i]->clone();
+            }
+        }
+    }
+    return (0);
+}
