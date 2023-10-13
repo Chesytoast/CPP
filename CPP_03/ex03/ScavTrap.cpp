@@ -18,8 +18,8 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(ScavTrap const& scav): ClapTrap(){
-	std::cout << "Copy constructor called, ScavTrap [" << _name << "] has been created."<< std::endl;
 	*this = scav;
+	std::cout << "Copy constructor called, ScavTrap [" << _name << "] has been created."<< std::endl;
 	return ;
 }
 

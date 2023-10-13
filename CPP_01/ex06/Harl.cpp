@@ -32,13 +32,29 @@ void	Harl::complain(std::string level){
 	std::string stringTab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	while(i < 4){
 		if (!stringTab[i].compare(level)){
-			std::cout << "[ " << stringTab[i] << " ]" << std::endl;
 			break ;
 		}
 		++i;
 	}
-	while(i < 4){
-			(this->*_memPointer[i])();
-		++i;
+	switch (i){
+		case 0:
+			std::cout << "[DEBUG]" << std::endl;
+			(this->*_memPointer[0])();
+			std::cout << std::endl;
+		case 1:
+			std::cout << "[INFO]" << std::endl;
+			(this->*_memPointer[0])();
+			std::cout << std::endl;
+		case 2:
+			std::cout << "[WARNING]" << std::endl;
+			(this->*_memPointer[2])();
+			std::cout << std::endl;
+		case 3:
+			std::cout << "[ERROR]" << std::endl;
+			(this->*_memPointer[3])();
+			std::cout << std::endl;
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" <<std::endl;
 	}
 }

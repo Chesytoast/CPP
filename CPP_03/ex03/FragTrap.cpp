@@ -17,8 +17,8 @@ FragTrap::FragTrap(std::string name): ClapTrap(name) {
 }
 
 FragTrap::FragTrap(FragTrap const& scav): ClapTrap(){
-	std::cout << "Copy constructor called, FragTrap [" << _name << "] has been created."<< std::endl;
 	*this = scav;
+	std::cout << "Copy constructor called, FragTrap [" << _name << "] has been created."<< std::endl;
 	return ;
 }
 
