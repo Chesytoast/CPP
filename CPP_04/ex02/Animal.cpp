@@ -27,7 +27,3 @@ Animal::~Animal(){
 std::string    Animal::getType()const{
     return _type;
 }
-
-void    Animal::makeSound(){
-    std::cout << "A sound" << std::endl;
-}
