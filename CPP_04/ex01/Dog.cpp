@@ -20,7 +20,7 @@ Dog& Dog::operator=(const Dog& other) {
     this->_type = other._type;
     if (this->_brain)
         delete this->_brain;
-    this->_brain = new Brain(*other._brain);
+    this->_brain = new Brain(*(other._brain));
     return *this;
 }
 
