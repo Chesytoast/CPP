@@ -23,10 +23,6 @@ AMateria::~AMateria(){
     return ;
 }
 
-AMateria* AMateria::clone()const{
-    return new AMateria(*this);
-}
-
 std::string const& AMateria::getType() const{
     return this->_type;
 }

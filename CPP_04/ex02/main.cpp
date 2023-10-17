@@ -5,7 +5,7 @@ int	main(){
 	Animal *a = new Cat();
 	Animal *b = new Dog();
 	
-	//cant cause abstract class
+	//cant because abstract class
 	// Animal *c = new Animal();
 	// c->makeSound();
 	// delete c;

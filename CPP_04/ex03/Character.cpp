@@ -53,9 +53,10 @@ void    Character::equip(AMateria* m){
     for (int i = 0; i < 4; ++i){
         if (!this->_inventory[i]){
             this->_inventory[i] = m;
-            break;
+            return ;
         }
     }
+	std::cout << "Inventory full" << std::endl;
 }
 
 //memory leaks check beforehand

@@ -6,7 +6,7 @@ FILES = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp Character.cpp \
 SRCS = $(FILES)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror  -g
 CPPFLAGS = -std=c++98
 
 all: $(OBJS_DIR) $(NAME)

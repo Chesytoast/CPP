@@ -1,10 +1,12 @@
 #include "Brain.hpp"
 
 Brain::Brain(){
+	std::cout << "Brain constructor called" << std::endl;
     return ;
 }
 
 Brain::Brain(const Brain& other) {
+	std::cout << "Brain copy constructor called" << std::endl;
     *this = other;
     return ;
 }

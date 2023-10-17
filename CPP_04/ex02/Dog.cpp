@@ -31,7 +31,7 @@ Dog::~Dog(){
 }
 
 void    Dog::makeSound(){
-    std::cout << "Bark" << std::endl;
+    std::cout << "Woof" << std::endl;
 }
 
 void    Dog::modifIdeas(int start, int end, std::string idea){

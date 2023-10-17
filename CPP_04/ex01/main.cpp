@@ -3,6 +3,10 @@
 
 int	main(){
 
+	// Dog basic;
+	// {
+	// Dog tmp = basic;
+	// }
 	// Animal *a = new Cat();
 	// Animal *b = new Dog();
 	// Animal *c = new Animal();
@@ -14,7 +18,6 @@ int	main(){
 	// delete b;
 	// delete c;
 	/*test to see if what is inside brain is well copied;*/
-	
 	// Brain b;
 	// b.setIdea("po", 2);
 	// Brain c;
@@ -32,34 +35,34 @@ int	main(){
 	// 	std::cout << "[" << i << "] " << c.getIdea(i) << std::endl;
 	// }
 	
-	//test pour le contenu du brain de dog (deep copy)
-	Dog a;
-	Dog b;
-	Dog c(a);
+	// //test pour le contenu du brain de dog (deep copy)
+	// Dog a;
+	// Dog b;
+	// Dog c(a);
 	
-	a.tellIdeas(100);
-	std::cout << std::endl;
-	b.tellIdeas(7);
-	std::cout << std::endl;
-	a.modifIdeas(1,7, "bone");
-	b = a;
-	a.tellIdeas(7);
-	std::cout << std::endl;
-	b.tellIdeas(7);
-	
-	// Animal *zoo[] = {
-	// 	new Dog(),
-	// 	new Dog(),
-	// 	new Cat(),
-	// 	new Cat()
-	// };
-	
+	// a.tellIdeas(100);
 	// std::cout << std::endl;
+	// b.tellIdeas(10);
+	// std::cout << std::endl;
+	// a.modifIdeas(1,7, "bone");
+	// b = a;
+	// a.tellIdeas(10);
+	// std::cout << std::endl;
+	// b.tellIdeas(10);
 	
-	// for (int i = 0; i < 4; ++i){
-	// 	delete zoo[i];
-	// 	std::cout << std::endl;
-	// } 
+	Animal *zoo[] = {
+		new Dog(),
+		new Dog(),
+		new Cat(),
+		new Cat()
+	};
+	
+	std::cout << std::endl;
+	
+	for (int i = 0; i < 4; ++i){
+		delete zoo[i];
+		std::cout << std::endl;
+	}
 	return 0;
 }
 
