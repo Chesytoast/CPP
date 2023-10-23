@@ -1,7 +1,7 @@
-NAME = ""
+NAME = bureaucrat
 OBJS_DIR = objs
 
-FILES = main.cpp
+FILES = main.cpp Bureaucrat.cpp
 SRCS = $(FILES)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 
