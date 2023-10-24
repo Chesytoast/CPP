@@ -44,6 +44,18 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& bur){
     return out;
 }
 
+void	Bureaucrat::demote(){
+	if (this->_grade >= 150)
+		throw Bureaucrat::GradeTooLowException();
+	++this->_grade;
+}
+
+void	Bureaucrat::promote(){
+	if (this->_grade <= 1)
+		throw Bureaucrat::GradeTooHighException();
+	--this->_grade;
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw(){
     return ("Grade too high");
 }
