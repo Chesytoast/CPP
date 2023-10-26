@@ -12,9 +12,9 @@ class ShrubberyCreationForm: public AForm {
 		ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(ShrubberyCreationForm const& other); 
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
-        ~ShrubberyCreationForm();
+        virtual ~ShrubberyCreationForm();
 
-		void	action(Bureaucrat const& executor);
+		void    execute(Bureaucrat const & executor) const;
 };
 
 #endif

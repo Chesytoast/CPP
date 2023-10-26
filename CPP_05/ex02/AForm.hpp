@@ -5,6 +5,7 @@
 #include <string>
 #include <exception>
 #include "Bureaucrat.hpp"
+#include <fstream>
 
 class AForm{
     private:
@@ -28,15 +29,18 @@ class AForm{
 			public:
 				virtual const char* what() const throw();
 		};
+		class FormNotSigned: public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 
 		std::string	getName()const;
 		bool		getSigned()const;
 		int			getToSign()const;
 		int			getToExec()const;
 
-		void	beSigned(Bureaucrat const& bur);
-		void	execute(Bureaucrat const & executor);
-		virtual	void action(Bureaucrat const & executor) = 0;
+		void			beSigned(Bureaucrat const& bur);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& out, AForm const& AForm);
