@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <climits>
 
 enum {
     BADTYPE = -1,
