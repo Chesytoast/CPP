@@ -1,11 +1,13 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy", 72, 45){
+	std::srand(std::time(0));
     return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robotomy", 72, 45), _target(target){
-    return ;
+    std::srand(std::time(0));
+	return ;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other): AForm("Robotomy", 72, 45){
@@ -28,7 +30,6 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 void    RobotomyRequestForm::execute(Bureaucrat const & executor) const{
    AForm::execute(executor);
    
-   std::srand(std::time(0));
    int i = rand() % 2;
    switch (i)
    {
