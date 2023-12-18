@@ -11,6 +11,7 @@ int	main(int ac, char **av){
 	std::string		av2;
 	std::string		av3;
 	size_t			index;
+	int pos = 0;
 
 	if (ac != 4)
 		return (1);
@@ -28,15 +29,16 @@ int	main(int ac, char **av){
 	av2.assign(av[2]);
 	av3.assign(av[3]);
 	while (1){
-		index = allFile.find(av[2]);
+		index = allFile.find(av[2], pos);
 		if (index == std::string::npos)
 			break ;
 		allFile.erase(index, av2.size());
 		allFile.insert(index, av3);
+		pos = index + av3.size();
 	}
 	out.assign(av[1]);
 	out.append(".replace");
-	ofs.open(out);
+	ofs.open(out.c_str());
 	if (ofs.fail()){
 		std::cerr << "Error while creating outfile" << std::endl;
 		return 1;	
