@@ -38,7 +38,7 @@ void	phoneBook::getContact(){
 		if (!getline(std::cin, buff))
 			return ;
 		if (isdigit(buff[0]) && buff.size() == 1)
-			index = std::atoi(buff.c_str());
+			index = atoi(buff.c_str());
 		else
 			index = -1;
 		if (index >= 0 && index <= 7){

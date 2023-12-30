@@ -1,34 +1,33 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <exception>
+#include <iostream>
 #include <algorithm>
+#include <exception>
+#include <vector>
 #include <climits>
 
 class Span {
     private:
+        std::vector<int> _cont;
+        unsigned int _capacity;
         Span();
-        int *_tab;
-        unsigned int _size;
-        unsigned int _index;
-
+    
     public:
-        Span(unsigned int N);
-        Span(Span const& other); 
-        Span& operator=(Span const& other);
+        Span(unsigned int n);
+        Span(const Span& other);
+        Span& operator=(const Span& other);
         ~Span();
-
-        class filledException: public std::exception{
-            public:
-                virtual const char* what() const throw();
-        };
-        class notEnoughNumberException: public std::exception{
-            public:
-                virtual const char* what() const throw();
-        };
+        
         void    addNumber(int number);
-        unsigned int shortestSpan()const;
-        unsigned int longestSpan()const;
+        int     shortestSpan();
+        int     longestSpan();
+        void    fillSpan(int n, unsigned int nbInt);
+        
+        class SpanFilledException: public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
 };
 
 #endif

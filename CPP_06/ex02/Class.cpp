@@ -53,7 +53,7 @@ void	identify(Base& p){
 	catch (std::exception &bc){}
 	try{
 		Base& test = dynamic_cast<B&>(p);
-		std::cout << "Object is of type A" << std::endl;
+		std::cout << "Object is of type B" << std::endl;
 	}
 	catch (std::exception &bc){}
 	try{
