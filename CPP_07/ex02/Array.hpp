@@ -10,7 +10,7 @@ class Array {
         T   *_tab;
 
     public:
-        Array<T>(): _size(1), _tab(new T()){}
+        Array<T>(): _size(0), _tab(NULL){}
         Array(unsigned int n): _size(n), _tab(new T[n]){}
         Array(Array const& other); 
         Array& operator=(Array const& other);

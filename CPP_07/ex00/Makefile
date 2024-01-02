@@ -1,7 +1,7 @@
 NAME = Template
 OBJS_DIR = objs
 
-FILES = main.cpp Test.cpp
+FILES = main.cpp
 SRCS = $(FILES)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 

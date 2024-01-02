@@ -1,5 +1,5 @@
-#ifndef TEST_HPP
-#define TEST_HPP
+#ifndef TEMPLATE_HPP
+#define TEMPLATE_HPP
 
 #include <string>
 #include <iostream>
@@ -20,5 +20,22 @@ class Test {
 };
 
 std::ostream& operator<<(std::ostream& out, const Test& arg);
+
+template < typename T>
+T const & max(T const& x, T const& y){
+	return (x > y ? x : y);
+}
+
+template < typename T>
+T const & min(T const& x, T const& y){
+	return (x < y ? x : y);
+}
+
+template < typename T>
+void swap(T& x, T& y){
+	T temp(x);
+	x = y;
+	y = temp;
+}
 
 #endif
