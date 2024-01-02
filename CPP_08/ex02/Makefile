@@ -1,4 +1,4 @@
-NAME = 
+NAME = Mutant
 OBJS_DIR = objs
 
 FILES = main.cpp 
@@ -11,7 +11,6 @@ CPPFLAGS = -std=c++98
 all: $(OBJS_DIR) $(NAME)
 
 $(OBJS_DIR):
-	@mkdir -p $(OBJS_DIR)
 	@mkdir -p $(OBJS_DIR)
 
 $(NAME): $(OBJS)
