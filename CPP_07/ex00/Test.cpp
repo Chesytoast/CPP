@@ -25,3 +25,16 @@ Test& Test::operator=(const Test& other) {
 Test::~Test(){
     return ;
 }
+
+bool	Test::operator<(const Test& other)const{
+	return (this->_nb < other._nb);
+}
+
+bool	Test::operator>(const Test& other)const{
+	return (this->_nb > other._nb);
+}
+
+std::ostream& operator<<(std::ostream& out, const Test& arg){
+	out << arg._nb;
+	return out;
+}

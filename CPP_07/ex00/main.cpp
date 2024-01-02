@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Test.hpp"
 #include "Template.hpp"
 
@@ -11,7 +10,7 @@ int	main(){
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 	std::string c = "chaine1";
 	std::string d = "chaine2";
-	::swap(c, d);
+	swap(c, d);
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
@@ -23,9 +22,13 @@ int	main(){
 	
 	std::cout << "t1: " << t1._str << t1._nb <<std::endl;
 	std::cout << "t2: " << t2._str << t2._nb <<std::endl;
+	std::cout << "min( t1, t2) = " << ::min( t1, t2) << std::endl;
+	std::cout << "max( t1, t2) = " << ::max( t1, t2) << std::endl;
 	swap<Test>(t1,t2);
 	std::cout << "t1: " << t1._str << t1._nb <<std::endl;
 	std::cout << "t2: " << t2._str << t2._nb <<std::endl;
+
+
 	
 	return 0;
 }

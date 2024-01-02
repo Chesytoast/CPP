@@ -2,6 +2,7 @@
 #define TEST_HPP
 
 #include <string>
+#include <iostream>
 
 class Test {
     private:
@@ -13,8 +14,11 @@ class Test {
         Test(std::string str, int nb);
         Test(Test const& other); 
         Test& operator=(Test const& other);
+		bool	operator>(const Test& other) const;
+		bool	operator<(const Test& other) const;
         ~Test();
-
 };
+
+std::ostream& operator<<(std::ostream& out, const Test& arg);
 
 #endif
