@@ -3,9 +3,14 @@
 
 template<typename T>
 void	iter(T* array, int length, void (*f)(T&)){
-	T* tmp= array;
 	for (int i =0; i < length; i++)
-		f(tmp[i]);
+		f(array[i]);
+}
+
+template<typename T>
+void	iter(T* array, int length, void (*f)(const T&)){
+	for (int i =0; i < length; i++)
+		f(array[i]);
 }
 
 #endif

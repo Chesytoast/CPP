@@ -43,7 +43,7 @@ int main(){
 	std::cout << std::endl;
 
 	std::cout << "Complex test" << std::endl << std::endl;
-	int const tab3[] = { 0, 1, 2, 3, 4 };
+	int tab3[] = { 0, 1, 2, 3, 4 };
 	Awesome tab2[5];
 
 	iter( tab3, 5, print<const int>);
