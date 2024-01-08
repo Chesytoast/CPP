@@ -5,6 +5,7 @@ Data::Data():i(42){
 }
 
 Data::Data(const Data& other) {
+	*this = other;
     return ;
 }
 

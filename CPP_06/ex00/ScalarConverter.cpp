@@ -1,11 +1,13 @@
 #include "ScalarConverter.hpp"
 #include <sstream>
+#include <iomanip>
 
 ScalarConverter::ScalarConverter(){
     return ;
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter& other) {
+	(void)other;
     return ;
 }
 
@@ -97,6 +99,10 @@ void toInt(std::string input){
     std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
 }
 
+size_t	givePrecision(std::string input){
+	return (input.size() - input.find(".") - 1);
+}
+
 void toFloat(std::string input){  
    if (input == "nanf" || input == "+inff" || input == "-inff"){
         std::cout << "char: " << "impossible" << std::endl;
@@ -106,6 +112,8 @@ void toFloat(std::string input){
         return ;
    }
         float f;
+		input.pop_back();
+		int precision = static_cast<int>(givePrecision(input));
         std::stringstream s(input);
         s >> f;
     if (s.fail()){
@@ -124,8 +132,8 @@ void toFloat(std::string input){
         std::cout << "int: " << static_cast<int>(f) << std::endl;
     else
          std::cout << "int: impossible" << std::endl;
-    std::cout << "float: " << f << "f" << std::endl;
-    std::cout << "double: " << static_cast<double>(f) << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(precision) << f << "f" << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(precision) << static_cast<double>(f) << std::endl;
 }
 
 void toDouble(std::string input){
@@ -138,6 +146,7 @@ void toDouble(std::string input){
     }
     else{
         double d;
+		int precision = static_cast<int>(givePrecision(input));
         std::stringstream s(input);
         s >> d;
         if (s.fail()){
@@ -156,8 +165,8 @@ void toDouble(std::string input){
             std::cout << "int: " << static_cast<int>(d) << std::endl;
         else
              std::cout << "int: impossible" << std::endl;
-        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-        std::cout << "double: " << d << std::endl;
+        std::cout << "float: " <<  std::fixed << std::setprecision(precision) << static_cast<float>(d) << "f" << std::endl;
+        std::cout << "double: " << std::fixed << std::setprecision(precision) << d << std::endl;
     }
 }
 

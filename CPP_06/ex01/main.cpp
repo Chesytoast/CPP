@@ -1,9 +1,9 @@
 #include "Serializer.hpp"
 
 int main(){
-	Data a;
-	Data* d;
-	uintptr_t t;
+	Data		a;
+	Data*		d;
+	uintptr_t	t;
 	
 	std::cout << "Data member i value: " << a.i << std::endl;
 	t = Serializer::serialize(&a);

@@ -5,6 +5,7 @@ Serializer::Serializer(){
 }
 
 Serializer::Serializer(const Serializer& other) {
+	(void)other;
     return ;
 }
 
