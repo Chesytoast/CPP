@@ -112,7 +112,7 @@ void toFloat(std::string input){
         return ;
    }
         float f;
-		input.pop_back();
+        input.erase(input.end()-1);
 		int precision = static_cast<int>(givePrecision(input));
         std::stringstream s(input);
         s >> f;
