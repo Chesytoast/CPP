@@ -165,7 +165,7 @@ void toDouble(std::string input){
             std::cout << "int: " << static_cast<int>(d) << std::endl;
         else
              std::cout << "int: impossible" << std::endl;
-        std::cout << "float: " <<  std::fixed << std::setprecision(precision) << static_cast<float>(d) << "f" << std::endl;
+        std::cout << "float: " << std::fixed << std::setprecision(precision) << static_cast<float>(d) << "f" << std::endl;
         std::cout << "double: " << std::fixed << std::setprecision(precision) << d << std::endl;
     }
 }
