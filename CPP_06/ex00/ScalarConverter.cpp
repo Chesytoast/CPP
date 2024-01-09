@@ -129,7 +129,7 @@ void toFloat(std::string input){
     else
         std::cout << "char: " << "impossible" << std::endl;
     if (f < static_cast<float>(INT_MAX) && f > static_cast<float>(INT_MIN))
-        std::cout << "int: " << static_cast<int>(f) << std::endl;
+        std::cout << "int: " << static_cast<int>(f) << std::endl;   
     else
          std::cout << "int: impossible" << std::endl;
     std::cout << "float: " << std::fixed << std::setprecision(precision) << f << "f" << std::endl;
