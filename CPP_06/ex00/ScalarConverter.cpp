@@ -81,7 +81,7 @@ void toInt(std::string input){
     
     s >> i;
     if (s.fail()){
-        std::cout << "int overflow" << std::endl;
+        std::cerr << "int overflow" << std::endl;
         return ;
     }
     if (i > INT_MAX)
@@ -117,7 +117,7 @@ void toFloat(std::string input){
         std::stringstream s(input);
         s >> f;
     if (s.fail()){
-        std::cout << "float overflow" << std::endl;
+        std::cerr << "float overflow" << std::endl;
         return ;
     }
     if (f < 256 && f >= 0){
@@ -150,7 +150,7 @@ void toDouble(std::string input){
         std::stringstream s(input);
         s >> d;
         if (s.fail()){
-            std::cout << "double overflow" << std::endl;
+            std::cerr << "double overflow" << std::endl;
             return;
         }
         if (d < 256 && d >= 0){
@@ -187,7 +187,7 @@ void    ScalarConverter::convert(std::string input){
         toDouble(input);
         break;
     default:
-        std::cout << "[" <<input <<"] is not of type char, int, float or double." << std::endl;
+        std::cerr << "[" <<input <<"] is not of type char, int, float or double." << std::endl;
         break;
     }
 }
