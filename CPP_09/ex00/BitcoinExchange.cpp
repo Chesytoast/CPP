@@ -35,20 +35,14 @@ bool	validDate(int year, int month, int day){
 		case 2:
 			if ((year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) && day == 29)
 				return true;
-			else if (day > 28)
-				return false;
-			return true;
+			return (day <= 28);
 		case 4:
 		case 6:
 		case 9:
 		case 11:
-			if (day > 30)
-				return false;
-			return true;
+			return (day <= 30);
 		default:
-		if (day > 31)
-				return false;
-			return true;
+			return (day <= 31);
 	}
 }
 
