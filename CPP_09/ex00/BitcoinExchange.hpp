@@ -12,7 +12,7 @@
 
 class OpenFileException: public std::exception{
 	virtual const char* what() const throw(){
-		return "Could not open the file";
+		return "Issue while opening a file";
 	}
 };
 
