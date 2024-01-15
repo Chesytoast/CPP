@@ -9,7 +9,6 @@ std::map<std::string, double>	mapDataBase(std::string filePath){
 	if (csvFile.fail()){
 		throw OpenFileException();
 	}
-	//getline to skip first line of csv file
 	getline(csvFile, line);
 	while (getline(csvFile, line)){
 		double		exchangeRate;
@@ -72,7 +71,6 @@ void	outputLine(std::string line, std::map<std::string, double> database){
 		std::cerr << "Error: too large number." << std::endl;
 		return;
 	}
-	//find value in map
 	std::string key(line.substr(0, line.find(" ")));
 	double value;
 	if (database.count(key)) //if the key exist take the value
