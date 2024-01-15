@@ -5,7 +5,7 @@ FILES = main.cpp PmergeMe.cpp
 SRCS = $(FILES)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Wno-unused -Werror -g
 CPPFLAGS = -std=c++98
 
 all: $(OBJS_DIR) $(NAME)
