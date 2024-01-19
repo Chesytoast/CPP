@@ -22,6 +22,10 @@ const char* Span::SpanFilledException::what() const throw(){
     return "Span already fill exception";
 }
 
+const char* Span::notEnoughNumberException::what() const throw(){
+    return "not enough number to calculate span";
+}
+
 void    Span::addNumber(int number){
     if (this->_capacity == this->_cont.size())
         throw SpanFilledException();
@@ -30,6 +34,8 @@ void    Span::addNumber(int number){
 }
 
 int Span::shortestSpan(){
+    if (this->_cont.size() < 2)
+        throw notEnoughNumberException();
     std::vector<int> vectorCopy(this->_cont.begin(), this->_cont.end());
     std::sort(vectorCopy.begin(), vectorCopy.end());
     int minSpan = INT_MAX;
@@ -40,6 +46,8 @@ int Span::shortestSpan(){
 }
 
 int Span::longestSpan(){
+    if (this->_cont.size() < 2)
+        throw notEnoughNumberException();
     return (*std::max_element(this->_cont.begin(), this->_cont.end()) - *std::min_element(this->_cont.begin(), this->_cont.end()));
 }
 
