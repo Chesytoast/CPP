@@ -4,7 +4,6 @@ std::map<std::string, double>	mapDataBase(std::string filePath){
 	std::fstream					csvFile;
 	std::string						line;
 	std::map<std::string, double>	dataBase;
-
 	csvFile.open(filePath.c_str());
 	if (csvFile.fail()){
 		throw OpenFileException();
@@ -96,4 +95,5 @@ void	outputResult(char* input, std::map<std::string, double> database){
 	while (getline(inputFile, line)){
 		outputLine(line, database);
 	}
+	inputFile.close();
 }
