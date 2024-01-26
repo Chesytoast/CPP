@@ -50,15 +50,11 @@ void	outputLine(std::string line, std::map<std::string, double> database){
 	double amount;
 	char a, b, c;
 	ss >> year >> a >> month>> b >> day>> c >> amount;
-	if (ss.fail()){
+	if (ss.fail() || !validDate(year, month, day)){
 		std::cerr << "Error: bad input => " << line << std::endl;
 		return;
 	}
 	if (a != '-' || b != '-' || c != '|'){
-		std::cerr << "Error: bad input => " << line << std::endl;
-		return;
-	}
-	if (!validDate(year, month, day)){
 		std::cerr << "Error: bad input => " << line << std::endl;
 		return;
 	}

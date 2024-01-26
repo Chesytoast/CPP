@@ -6,6 +6,8 @@ int main(int ac, char **av){
 		return 1;
 	}
 	std::string input(av[1]);
+	if(input.empty())
+		return 1;
 	std::stack<int> stack;
 	try{
 		calculationLoop(input, stack);
