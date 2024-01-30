@@ -43,7 +43,7 @@ void	calculationLoop(std::string input, std::stack<int>& stack){
 		type = ss.peek();
 		if (type == EOF)
 			break;
-		if (isdigit(type) || ((type == '-') && isdigit(ss.peek()))){
+		if (isdigit(type)){
 			ss >> buff;
 			if (ss.fail())
 				throw FormatError();
@@ -52,7 +52,14 @@ void	calculationLoop(std::string input, std::stack<int>& stack){
 			ss >> operand;
 			if (ss.fail())
 				throw FormatError();
-			if (stack.size() >= 2)
+			if ((type == '-') && isdigit(ss.peek())){
+				ss >> buff;
+				buff *= -1;
+				if (ss.fail())
+					throw FormatError();
+				stack.push(buff);
+			}
+			else if (stack.size() >= 2)
 				executeOperation(operand, stack);
 			else
 				throw OperationError();
